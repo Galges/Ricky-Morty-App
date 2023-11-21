@@ -1,7 +1,7 @@
 import React from 'react'
-import './Card.css'
+import './Cards.css'
 
-function Card({data}) {
+function Cards({data}) {
   return (
     <>
     <div className='boxes'>
@@ -30,4 +30,4 @@ function Card({data}) {
   )
 }
 
-export default Card
+export default Cards
