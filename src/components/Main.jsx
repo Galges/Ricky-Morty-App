@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Cards'
+import './Main.css'
+import { SlControlForward, SlControlRewind } from "react-icons/sl";
 
 function Main() {
 	const [data, setData] = useState([])
@@ -17,8 +19,13 @@ function Main() {
 	useEffect(() => {
 		fetchInfo()
 	}, [currentPage])
-	const handlePageChange = newPage => {
+	
+	const handlePageChange = (newPage)  => {
+		if(newPage === 0 || newPage === 43)  {
+			return
+		} else
 		setCurrentPage(newPage)
+		
 	}
 
 	return (
@@ -26,10 +33,13 @@ function Main() {
 			<div className='container'>
 				{data.length > 0 ? <Card data={data} /> : <p>Loading...</p>}
 
-				<div>
-					<button onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
+				<div className='buttons'>
+					<button onClick={()=>setCurrentPage(1)}  className='firstPage'> <SlControlRewind /> </button>
+					
+					< button className='btn' onClick={() => handlePageChange(currentPage - 1)}>Previous</ button>
 					<span>{` Page ${currentPage} of ${totalPages} `}</span>
-					<button onClick={() => handlePageChange(currentPage + 1)}>Next</button>
+					< button className='btn' onClick={() => handlePageChange(currentPage + 1)}>Next</ button>
+					<button onClick={()=>setCurrentPage(42)} className='lastPage'> <SlControlForward /> </button>
 				</div>
 			</div>
 		</>

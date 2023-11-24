@@ -1,0 +1,23 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+.btn {
+    margin: 0 10px;
+    width: 5%;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #070F4E;
+    color:#F4F4F2;
+    border: none;
+    border-radius: 5px;
+}
+.buttons span {
+    margin: 10px;
+}
+.firstPage, .lastPage {
+    border:none;
+    font-size: 20px;
+    cursor: pointer;
+}

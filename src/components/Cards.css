@@ -32,6 +32,7 @@
     margin: 10px 0;
 }
 .name,.location {
+    padding: 3px;
     font-size: 18px;
     color: #F4F4F2;
 }
