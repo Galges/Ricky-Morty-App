@@ -1,0 +1,10 @@
+.sidebox {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    width: 25%;
+}
+.filtersList {
+    border: 2px solid black;
+    padding: 10px;
+}

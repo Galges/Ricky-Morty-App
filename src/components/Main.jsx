@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Card from './Cards'
 import './Main.css'
 import { SlControlForward, SlControlRewind } from "react-icons/sl";
+import AsideBar from './AsideBar';
 
 function Main() {
 	const [data, setData] = useState([])
@@ -29,7 +30,9 @@ function Main() {
 	}
 
 	return (
-		<>
+		
+		<div className='main'>
+			<AsideBar/>
 			<div className='container'>
 				{data.length > 0 ? <Card data={data} /> : <p>Loading...</p>}
 
@@ -42,7 +45,7 @@ function Main() {
 					<button onClick={()=>setCurrentPage(42)} className='lastPage'> <SlControlForward /> </button>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

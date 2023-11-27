@@ -3,7 +3,7 @@
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
-    width: 65%;
+    width: 100%;
 }
 .box {
     position: relative;
@@ -12,6 +12,9 @@
     background-color: #070F4E;
     border: solid 2px #2772DB;
     border-radius: 5px;
+}
+.box:hover{
+    transform:scale(1.1);
 }
 .box-Img img {
     width: 100%;

@@ -1,0 +1,26 @@
+.spaceFilter {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.btn {
+    width: 15%;
+}
+.spacesList {
+    display: none;
+}
+.spacesList-active{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px;
+}
+
+.space{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 40%;
+    margin: 10px 0 10px 15px;
+}
