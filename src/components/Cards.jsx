@@ -2,9 +2,11 @@ import React from 'react'
 import './Cards.css'
 
 function Cards({data}) {
+
   return (
     <>
     <div className='boxes'>
+      
      {data.map((x) => {
           let { id, name, image, status, location } = x;
 

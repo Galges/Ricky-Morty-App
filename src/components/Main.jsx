@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Cards'
 import './Main.css'
-import { SlControlForward, SlControlRewind } from "react-icons/sl";
-import AsideBar from './AsideBar';
+import { SlControlForward, SlControlRewind } from 'react-icons/sl'
+
+import AsideBar from './AsideBar'
 
 function Main() {
 	const [data, setData] = useState([])
 	const [currentPage, setCurrentPage] = useState(1)
+
 	const totalPages = 42
 
 	const URL = `https://rickandmortyapi.com/api/character?page=${currentPage}`
@@ -20,29 +22,36 @@ function Main() {
 	useEffect(() => {
 		fetchInfo()
 	}, [currentPage])
-	
-	const handlePageChange = (newPage)  => {
-		if(newPage === 0 || newPage === 43)  {
+
+	const handlePageChange = newPage => {
+		if (newPage === 0 || newPage === 43) {
 			return
-		} else
-		setCurrentPage(newPage)
-		
+		} else setCurrentPage(newPage)
 	}
 
 	return (
-		
 		<div className='main'>
-			<AsideBar/>
+			<AsideBar />
 			<div className='container'>
 				{data.length > 0 ? <Card data={data} /> : <p>Loading...</p>}
 
 				<div className='buttons'>
-					<button onClick={()=>setCurrentPage(1)}  className='firstPage'> <SlControlRewind /> </button>
-					
-					< button className='btn' onClick={() => handlePageChange(currentPage - 1)}>Previous</ button>
+					<button onClick={() => setCurrentPage(1)} className='firstPage'>
+						{' '}
+						<SlControlRewind />{' '}
+					</button>
+
+					<button className='btn-prev' onClick={() => handlePageChange(currentPage - 1)}>
+						Prev
+					</button>
 					<span>{` Page ${currentPage} of ${totalPages} `}</span>
-					< button className='btn' onClick={() => handlePageChange(currentPage + 1)}>Next</ button>
-					<button onClick={()=>setCurrentPage(42)} className='lastPage'> <SlControlForward /> </button>
+					<button className='btn-next' onClick={() => handlePageChange(currentPage + 1)}>
+						Next
+					</button>
+					<button onClick={() => setCurrentPage(42)} className='lastPage'>
+						{' '}
+						<SlControlForward />{' '}
+					</button>
 				</div>
 			</div>
 		</div>

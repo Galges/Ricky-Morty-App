@@ -2,6 +2,7 @@ import React from 'react'
 import './FilterSpace.css'
 import { useState, useEffect } from 'react'
 
+
 function SpacesFilter() {
     const [locations, setLocations] = useState('')
     const [selectedLocation, setSelectedLocation] = useState('')
@@ -30,10 +31,11 @@ function SpacesFilter() {
     const selectLocation = (location) => {
         if(selectedLocation === location) {
             setSelectedLocation('')
-        } else {
-            setSelectedLocation(location)
+          } else {
+            setSelectedLocation(location)  
         }
-    }
+      }
+      console.log(selectedLocation);
 
 	return (
 		<>  
@@ -41,7 +43,7 @@ function SpacesFilter() {
 
 			<div className='spaceFilter'>
 				<div className='filterName'>Spaces</div>
-				<button onClick={btnToggler} className='btn btn-togger'> click </button>
+				<button onClick={btnToggler} className='btn btn-togger'> Click </button>
 			</div>
                 <div className={active}>
                 {locations && locations.map((location) => {
@@ -50,7 +52,7 @@ function SpacesFilter() {
                     return (
                         <>
                         <div key={location.id} className='space'>
-                        <label type='text'>{location.name}</label>
+                        <label className='space-name' type='text'>{location.name}</label>
                         <input type="checkbox" onClick={() => selectLocation(location)} checked={selectedLocation === location}></input>
                         </div>
                         </>
@@ -60,6 +62,7 @@ function SpacesFilter() {
                    
                 </div>
             </div>
+            
 		</>
 	)
 }
