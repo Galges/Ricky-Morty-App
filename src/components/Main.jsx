@@ -8,6 +8,7 @@ import AsideBar from './AsideBar'
 function Main() {
 	const [data, setData] = useState([])
 	const [currentPage, setCurrentPage] = useState(1)
+	const [spaces, setSpaces] = useState('')
 
 	const totalPages = 42
 
@@ -28,12 +29,20 @@ function Main() {
 			return
 		} else setCurrentPage(newPage)
 	}
+	const handleSpacesChange = newSpaces => {
+		if (newSpaces.length === 0) {
+			return
+		} else {
+			setSpaces(newSpaces.residents)
+		}
+	}
+	console.log(spaces)
 
 	return (
 		<div className='main'>
-			<AsideBar />
+			<AsideBar onSpacesChange={handleSpacesChange} />
 			<div className='container'>
-				{data.length > 0 ? <Card data={data} /> : <p>Loading...</p>}
+				{data.length > 0 ? <Card space={spaces} data={data} /> : <p>Loading...</p>}
 
 				<div className='buttons'>
 					<button onClick={() => setCurrentPage(1)} className='firstPage'>

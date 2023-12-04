@@ -1,19 +1,18 @@
 .sidebox {
-    display: flex;
-    margin-left: 20px;
-    flex-direction: column;
-    width: 25%;
+	display: flex;
+	margin-left: 30px;
+	flex-direction: column;
+	width: 25%;
 }
 .filtersList {
-    border: 2px solid black;
-    padding: 10px;
+	border: 2px solid black;
+	padding: 10px;
 }
 
 @media screen and (max-width: 768px) {
-.sidebox {
-    width: 80%;
-    margin-bottom: 30px;
-    margin-left: -2px;
-}
-
+	.sidebox {
+		width: 80%;
+		margin-bottom: 30px;
+		margin-left: -2px;
+	}
 }
