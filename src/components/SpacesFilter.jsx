@@ -39,7 +39,7 @@ function SpacesFilter({ onSelectLocation }) {
 		}
 	}
 
-	//   console.log(selectedLocation);
+	  console.log(selectedLocation);
 
 	return (
 		<>
