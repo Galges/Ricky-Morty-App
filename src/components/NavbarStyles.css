@@ -51,19 +51,22 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+
+  
   .nav-toggler {
     display: block;
     cursor: pointer;
+    z-index: 10;
   }
   .nav-logo {
     font-size: 16px;
   }
   .nav-menu {
     position: fixed;
-    top: 7vh;
+    top: 0;
     right: 0;
-    height: 93vh;
-    width: 50vw;
+    height: 100%;
+    width: 45vw;
     background: #070F4E;
     flex-direction: column;
     transform: translateX(100%);

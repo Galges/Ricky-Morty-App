@@ -14,6 +14,7 @@ function SpacesFilter({ onSelectLocation }) {
 			.then(res => res.json())
 			.then(res => setLocations(res.results))
 	}
+	console.log(locations)
 	const selectLocation = location => {
 		if (selectedLocation === location) {
 			setSelectedLocation('')
@@ -21,11 +22,14 @@ function SpacesFilter({ onSelectLocation }) {
 			setSelectedLocation(location)
 		}
 	}
-	onSelectLocation(selectedLocation)
 
 	useEffect(() => {
 		fetchLocation()
 	}, [])
+
+	useEffect(() => {
+		onSelectLocation(selectedLocation)
+	}, [selectedLocation, onSelectLocation])
 
 	const btnToggler = () => {
 		if (active === 'spacesList') {
@@ -52,15 +56,19 @@ function SpacesFilter({ onSelectLocation }) {
 						locations.map(location => {
 							return (
 								<>
-									<div key={location.id} className='space'>
-										<label className='space-name' type='text'>
-											{location.name}
-										</label>
-										<input
-											type='checkbox'
-											onClick={() => selectLocation(location)}
-											checked={selectedLocation === location}></input>
-									</div>
+									{location.residents.length !== 0 ? (
+										<div key={location.id} className='space'>
+											<label className='space-name' type='text'>
+												{location.name}
+											</label>
+											<input
+												type='checkbox'
+												onClick={() => selectLocation(location)}
+												checked={selectedLocation === location}></input>
+										</div>
+									) : (
+										''
+									)}
 								</>
 							)
 						})}
