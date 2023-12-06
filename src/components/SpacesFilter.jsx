@@ -22,7 +22,6 @@ function SpacesFilter({ onSelectLocation }) {
 			setSelectedLocation(location)
 		}
 	}
-
 	useEffect(() => {
 		fetchLocation()
 	}, [])
@@ -38,9 +37,6 @@ function SpacesFilter({ onSelectLocation }) {
 			setActive('spacesList')
 		}
 	}
-
-	  console.log(selectedLocation);
-
 	return (
 		<>
 			<div>
