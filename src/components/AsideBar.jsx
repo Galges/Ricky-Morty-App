@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './AsideBar.css'
 import './SpacesFilter'
 import SpacesFilter from './SpacesFilter'
+import GenderFilter from './GenderFilter'
 
 function AsideBar({ onSpacesChange }) {
 	const [spaces, setSpaces] = useState('')
@@ -15,6 +16,7 @@ function AsideBar({ onSpacesChange }) {
 				<h1>Filters</h1>
 				<div className='filtersList'>
 					<SpacesFilter onSelectLocation={handleSelectedLocation} />
+					<GenderFilter />
 				</div>
 			</div>
 		</>
